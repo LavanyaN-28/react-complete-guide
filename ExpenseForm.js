@@ -1,23 +1,32 @@
-import React from "react";
+import React,{useState} from "react";
 
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
 
+    const [enteredTitle,setEnteredTitle] = useState('');
+    const [enteredAmount,setEnteredAmount]=useState('');
+    const [enteredDate,setEnteredDate]=useState('');
+    const [enteredLocation,setEnteredLocation]=useState('');
+
     const titleChangeHandler = (event) =>{
-        console.log(event.target.value)
+        setEnteredTitle(event.target.value);
+        console.log(enteredTitle);
     }
 
     const amountChangeHandler = (event) =>{
-        console.log(event.target.value)
+        setEnteredAmount(event.target.value);
+        console.log(enteredAmount);
     }
 
     const locationChangeHandler = (event) =>{
-        console.log(event.target.value)
+        setEnteredLocation(event.target.value);
+        console.log(enteredLocation);
     }
 
     const dateChangeHandler = (event) =>{
-        console.log(event.target.value)
+       setEnteredDate(event.target.value);
+       console.log(enteredDate);
     }
 
     return (
@@ -45,7 +54,7 @@ const ExpenseForm = () => {
                 <button type="submit">Add Expense</button>
             </div>
         </form>
-    )
+    );
 }
 
 export default ExpenseForm;
