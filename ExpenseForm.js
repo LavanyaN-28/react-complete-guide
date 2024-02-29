@@ -4,29 +4,64 @@ import './ExpenseForm.css';
 
 const ExpenseForm = () => {
 
-    const [enteredTitle,setEnteredTitle] = useState('');
-    const [enteredAmount,setEnteredAmount]=useState('');
-    const [enteredDate,setEnteredDate]=useState('');
-    const [enteredLocation,setEnteredLocation]=useState('');
+    // const [enteredTitle,setEnteredTitle] = useState('');
+    // const [enteredAmount,setEnteredAmount]=useState('');
+    // const [enteredDate,setEnteredDate]=useState('');
+    // const [enteredLocation,setEnteredLocation]=useState('');
+
+    const [userInput,setUserInput]=useState({
+        enteredTitle:'',
+        enteredAmount:'',
+        enteredLocation:'',
+        enteredDate:''
+    })
 
     const titleChangeHandler = (event) =>{
-        setEnteredTitle(event.target.value);
-        console.log(enteredTitle);
+      //  setEnteredTitle(event.target.value);
+    //   setUserInput({
+    //     ...userInput,
+    //     enteredTitle: event.target.value
+    // })
+        setUserInput((prevState) => {
+            return {...prevState,
+            enteredTitle: event.target.value}
+        })
     }
 
     const amountChangeHandler = (event) =>{
-        setEnteredAmount(event.target.value);
-        console.log(enteredAmount);
+       // setEnteredAmount(event.target.value);
+    //    setUserInput({
+    //     ...userInput,
+    //     enteredAmount: event.target.value
+    // })
+    setUserInput((prevState) => {
+        return {...prevState,
+        enteredAmount: event.target.value}
+    })
     }
 
     const locationChangeHandler = (event) =>{
-        setEnteredLocation(event.target.value);
-        console.log(enteredLocation);
+       // setEnteredLocation(event.target.value);
+    //    setUserInput({
+    //     ...userInput,
+    //     enteredLocation: event.target.value
+    // })
+    setUserInput((prevState) => {
+        return {...prevState,
+        enteredLocation: event.target.value}
+    })
     }
 
     const dateChangeHandler = (event) =>{
-       setEnteredDate(event.target.value);
-       console.log(enteredDate);
+      // setEnteredDate(event.target.value);
+    //   setUserInput({
+    //     ...userInput,
+    //     enteredDate: event.target.value
+    // })
+    setUserInput((prevState) => {
+        return {...prevState,
+        enteredDate: event.target.value}
+    })
     }
 
     return (
